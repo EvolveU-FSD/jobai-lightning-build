@@ -84,3 +84,17 @@ npm i --save-dev @types/cors
 ✅ At the end of this milestone, learners should have:
 A Next.js UI where users can upload resumes.
 A working Express API.
+
+### 🕑 Second Hour: Resume Parsing + Job Description Comparison
+Now, let’s extract data from the resume and compare it to a job description.
+1️⃣ Add API Call in Next.js
+Edit pages/index.tsx
+2️⃣ Implement Resume Parsing in Express
+Edit server/index.ts
+Create your .env file at the root of the project:
+```
+OPENAI_API_KEY=<your api key>
+```
+
+✅ At the end of this milestone, learners should have:
+Resume parsing & job matching with AI-powered comparison.
