@@ -98,3 +98,30 @@ OPENAI_API_KEY=<your api key>
 
 ✅ At the end of this milestone, learners should have:
 Resume parsing & job matching with AI-powered comparison.
+
+
+### 🕒 Third Hour: AI-Generated Cover Letters + Strategy
+Now, generate a customized cover letter and improvement strategy.
+1️⃣ Add AI Cover Letter Button
+Edit pages/index.tsx
+
+2️⃣ Add Cover Letter API Endpoint
+Edit server/index.ts
+
+✅ At the end of this milestone, learners should have:
+AI-generated cover letters based on the job description.
+
+### 🕓 Final 30 Minutes: Deployment & Testing
+Deploy Next.js Frontend to Vercel
+vercel
+Deploy Express API
+Modify package.json:
+```
+"scripts": {
+  "start": "node server/index.js"
+}
+```
+Deploy using Render:
+
+✅ At the end of this milestone, learners should have:
+A fully working JobFit AI tool is deployed and accessible online.
