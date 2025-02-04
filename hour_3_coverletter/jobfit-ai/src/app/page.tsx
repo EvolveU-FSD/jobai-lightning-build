@@ -6,7 +6,7 @@ export default function Home() {
   const [jobDescription, setJobDescription] = useState("");
   const [matchScore, setMatchScore] = useState<number | null>(null);
   const [list, setList] = useState<string[] | null>([]);
-  const [coverLetter, setCoverLetter] = useState<number | null>(null);
+  const [coverLetter, setCoverLetter] = useState<string | null>(null);
 
   const analyzeJobFit = async () => {
     const response = await fetch("http://localhost:5001/api/analyze", {
