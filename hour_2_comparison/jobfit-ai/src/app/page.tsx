@@ -5,6 +5,7 @@ export default function Home() {
   const [resumeText, setResumeText] = useState("");
   const [jobDescription, setJobDescription] = useState("");
   const [matchScore, setMatchScore] = useState<number | null>(null);
+  const [list, setList] = useState<string[] | null>([]);
 
   const analyzeJobFit = async () => {
     const response = await fetch("http://localhost:5001/api/analyze", {
@@ -14,6 +15,7 @@ export default function Home() {
     });
     const data = await response.json();
     setMatchScore(data.matchScore);
+    setList(data.list);
   };
 
   return (
@@ -34,7 +36,27 @@ export default function Home() {
       <button onClick={analyzeJobFit} className="mt-3 px-4 py-2 bg-blue-600 text-white rounded">
         Analyze Fit
       </button>
-      {matchScore !== null && <p className="mt-2">Match Score: {matchScore}%</p>}
+      {/* {matchScore !== null && <p className="mt-2">Match Score: {matchScore}%</p>} */}
+      {list !== null && <ul>
+        {list.map((listItem, index) => (
+          
+          <ShowListItem key={index} text={listItem} index={index} />
+        ))}
+      </ul>}
     </div>
   );
+}
+
+interface ShowListItemProps {
+  text: string;
+  index: number;
+}
+
+function ShowListItem({ text, index }: ShowListItemProps) {
+  return (
+    <>
+      <p>{index}:</p>
+      <li>{text}</li>;
+    </>
+  )
 }
